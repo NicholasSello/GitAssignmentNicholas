@@ -1,1 +1,144 @@
 Nicholas
+Microsoft Windows [Version 10.0.22631.5984]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git branch Step1.txt
+fatal: not a valid object name: 'master'
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git add step1.txt
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git commit -m Step1
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Step1.txt
+        Step2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Step1.txt
+        Step2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git remote add origin https://github.com/NicholasSello/GitAssignmentNicholas.git
+error: remote origin already exists.
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git branch -M main
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/NicholasSello/GitAssignmentNicholas.git'
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git add Step1.txt
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git commit -m "first commit"
+[main (root-commit) fc76356] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Step1.txt
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git branch
+* main
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git checkout -b step1
+Switched to a new branch 'step1'
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git push origin step1
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 225 bytes | 112.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'step1' on GitHub by visiting:
+remote:      https://github.com/NicholasSello/GitAssignmentNicholas/pull/new/step1
+remote:
+To https://github.com/NicholasSello/GitAssignmentNicholas.git
+ * [new branch]      step1 -> step1
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git add Step2
+fatal: pathspec 'Step2' did not match any files
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git add Step2.txt
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git status
+On branch step1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Step2.txt
+
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git commit -m "Second commit"
+[step1 159a5d6] Second commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Step2.txt
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git push origin step1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 281 bytes | 40.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/NicholasSello/GitAssignmentNicholas.git
+   fc76356..159a5d6  step1 -> step1
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git log --oneline
+159a5d6 (HEAD -> step1, origin/step1) Second commit
+fc76356 (main) first commit
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git checkout main
+Switched to branch 'main'
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git merge step1
+Updating fc76356..159a5d6
+Fast-forward
+ Step2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Step2.txt
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git checkout step1
+Switched to branch 'step1'
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git status
+On branch step1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Step1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git add Step1.txt
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git commit -m "edited step1"
+[step1 9fcd01c] edited step1
+ 1 file changed, 113 insertions(+), 1 deletion(-)
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git push origin step1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.28 KiB | 436.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/NicholasSello/GitAssignmentNicholas.git
+   159a5d6..9fcd01c  step1 -> step1
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git checkout main
+Switched to branch 'main'
+
+C:\Users\nicholas.sello\GitAssignmentNicholas\GitAssignmentNicholas>git checkout -b step2
+Switched to a new branch 'step2'
